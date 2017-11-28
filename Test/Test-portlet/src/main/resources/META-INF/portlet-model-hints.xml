@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="net.opentrends.training.service.model.Employee">
+		<field name="employeeId" type="long" />
+		<field name="employeeName" type="String" />
+		<field name="houseName" type="String" />
+		<field name="street" type="String" />
+		<field name="city" type="String" />
+		<field name="district" type="String" />
+		<field name="pincode" type="String" />
+		<field name="phone" type="String" />
+		<field name="department" type="String" />
+		<field name="designation" type="String" />
+		<field name="salary" type="long" />
+		<field name="email" type="String" />
+		<field name="adharno" type="String" />
+		<field name="fileEntryId" type="long" />
+	</model>
+</model-hints>

@@ -1,0 +1,29 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="net.opentrends.training.service">
+	<namespace>emp</namespace>
+
+	<entity name="Employee" local-service="true" remote-service="false">
+		<column name="employeeId" type="long" primary="true" />
+
+		<column name="employeeName" type="String" />
+		<column name="houseName" type="String" />
+		<column name="street" type="String"></column>
+		<column name="city" type="String"></column>
+		<column name="district" type="String"></column>
+		<column name="pincode" type="String"></column>
+		<column name="phone" type="String"></column>
+		<column name="department" type="String"></column>
+		<column name="designation" type="String"></column>
+		<column name="salary" type="long"></column>
+		<column name="email" type="String"></column>
+		<column name="adharno" type="String"></column>
+		<column name="fileEntryId" type="long"/>
+		<finder return-type="Employee" name="EmployeeId">
+			<finder-column name="employeeId"></finder-column>
+		</finder>
+		<finder return-type="Employee" name="EmployeeName">
+			<finder-column name="employeeName"></finder-column>
+		</finder>
+	</entity>
+</service-builder>
