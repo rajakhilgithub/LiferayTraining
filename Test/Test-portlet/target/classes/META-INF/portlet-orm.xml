@@ -10,6 +10,7 @@
 	<mapped-superclass class="net.opentrends.training.service.model.impl.EmployeeModelImpl">
 		<attributes>
 			<id name="employeeId" />
+			<basic name="groupId" />
 			<basic name="employeeName" />
 			<basic name="houseName" />
 			<basic name="street" />

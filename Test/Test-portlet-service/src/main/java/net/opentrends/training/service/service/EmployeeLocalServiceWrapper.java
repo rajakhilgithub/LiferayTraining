@@ -283,6 +283,16 @@ public class EmployeeLocalServiceWrapper implements EmployeeLocalService,
             themeDisplay);
     }
 
+    @Override
+    public net.opentrends.training.service.model.Employee addEmployee(
+        net.opentrends.training.service.model.Employee employee,
+        com.liferay.portal.model.User user,
+        com.liferay.portal.service.ServiceContext serviceContext)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return _employeeLocalService.addEmployee(employee, user, serviceContext);
+    }
+
     /**
      * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
      */

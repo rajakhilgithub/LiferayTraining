@@ -17,7 +17,7 @@
 		</footer-portlet-javascript>
 		<css-class-wrapper>employee-portlet</css-class-wrapper>
 	</portlet>
-	
+
 	<role-mapper>
 		<role-name>administrator</role-name>
 		<role-link>Administrator</role-link>

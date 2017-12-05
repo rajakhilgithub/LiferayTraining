@@ -5,7 +5,7 @@
 
 	<entity name="Employee" local-service="true" remote-service="false">
 		<column name="employeeId" type="long" primary="true" />
-
+		<column name="groupId" type="long"/>
 		<column name="employeeName" type="String" />
 		<column name="houseName" type="String" />
 		<column name="street" type="String"></column>

@@ -58,6 +58,20 @@ public interface EmployeeModel extends BaseModel<Employee> {
     public void setEmployeeId(long employeeId);
 
     /**
+     * Returns the group ID of this employee.
+     *
+     * @return the group ID of this employee
+     */
+    public long getGroupId();
+
+    /**
+     * Sets the group ID of this employee.
+     *
+     * @param groupId the group ID of this employee
+     */
+    public void setGroupId(long groupId);
+
+    /**
      * Returns the employee name of this employee.
      *
      * @return the employee name of this employee

@@ -20,6 +20,7 @@ import java.util.Map;
 
 public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
     private long _employeeId;
+    private long _groupId;
     private String _employeeName;
     private String _houseName;
     private String _street;
@@ -74,6 +75,7 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
         attributes.put("employeeId", getEmployeeId());
+        attributes.put("groupId", getGroupId());
         attributes.put("employeeName", getEmployeeName());
         attributes.put("houseName", getHouseName());
         attributes.put("street", getStreet());
@@ -97,6 +99,12 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 
         if (employeeId != null) {
             setEmployeeId(employeeId);
+        }
+
+        Long groupId = (Long) attributes.get("groupId");
+
+        if (groupId != null) {
+            setGroupId(groupId);
         }
 
         String employeeName = (String) attributes.get("employeeName");
@@ -194,6 +202,28 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
                 Method method = clazz.getMethod("setEmployeeId", long.class);
 
                 method.invoke(_employeeRemoteModel, employeeId);
+            } catch (Exception e) {
+                throw new UnsupportedOperationException(e);
+            }
+        }
+    }
+
+    @Override
+    public long getGroupId() {
+        return _groupId;
+    }
+
+    @Override
+    public void setGroupId(long groupId) {
+        _groupId = groupId;
+
+        if (_employeeRemoteModel != null) {
+            try {
+                Class<?> clazz = _employeeRemoteModel.getClass();
+
+                Method method = clazz.getMethod("setGroupId", long.class);
+
+                method.invoke(_employeeRemoteModel, groupId);
             } catch (Exception e) {
                 throw new UnsupportedOperationException(e);
             }
@@ -554,6 +584,7 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
         EmployeeClp clone = new EmployeeClp();
 
         clone.setEmployeeId(getEmployeeId());
+        clone.setGroupId(getGroupId());
         clone.setEmployeeName(getEmployeeName());
         clone.setHouseName(getHouseName());
         clone.setStreet(getStreet());
@@ -616,10 +647,12 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 
     @Override
     public String toString() {
-        StringBundler sb = new StringBundler(29);
+        StringBundler sb = new StringBundler(31);
 
         sb.append("{employeeId=");
         sb.append(getEmployeeId());
+        sb.append(", groupId=");
+        sb.append(getGroupId());
         sb.append(", employeeName=");
         sb.append(getEmployeeName());
         sb.append(", houseName=");
@@ -653,7 +686,7 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
 
     @Override
     public String toXmlString() {
-        StringBundler sb = new StringBundler(46);
+        StringBundler sb = new StringBundler(49);
 
         sb.append("<model><model-name>");
         sb.append("net.opentrends.training.service.model.Employee");
@@ -662,6 +695,10 @@ public class EmployeeClp extends BaseModelImpl<Employee> implements Employee {
         sb.append(
             "<column><column-name>employeeId</column-name><column-value><![CDATA[");
         sb.append(getEmployeeId());
+        sb.append("]]></column-value></column>");
+        sb.append(
+            "<column><column-name>groupId</column-name><column-value><![CDATA[");
+        sb.append(getGroupId());
         sb.append("]]></column-value></column>");
         sb.append(
             "<column><column-name>employeeName</column-name><column-value><![CDATA[");

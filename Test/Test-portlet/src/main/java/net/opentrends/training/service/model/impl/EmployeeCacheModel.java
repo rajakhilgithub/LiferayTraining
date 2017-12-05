@@ -20,6 +20,7 @@ import java.io.ObjectOutput;
  */
 public class EmployeeCacheModel implements CacheModel<Employee>, Externalizable {
     public long employeeId;
+    public long groupId;
     public String employeeName;
     public String houseName;
     public String street;
@@ -36,10 +37,12 @@ public class EmployeeCacheModel implements CacheModel<Employee>, Externalizable 
 
     @Override
     public String toString() {
-        StringBundler sb = new StringBundler(29);
+        StringBundler sb = new StringBundler(31);
 
         sb.append("{employeeId=");
         sb.append(employeeId);
+        sb.append(", groupId=");
+        sb.append(groupId);
         sb.append(", employeeName=");
         sb.append(employeeName);
         sb.append(", houseName=");
@@ -76,6 +79,7 @@ public class EmployeeCacheModel implements CacheModel<Employee>, Externalizable 
         EmployeeImpl employeeImpl = new EmployeeImpl();
 
         employeeImpl.setEmployeeId(employeeId);
+        employeeImpl.setGroupId(groupId);
 
         if (employeeName == null) {
             employeeImpl.setEmployeeName(StringPool.BLANK);
@@ -155,6 +159,7 @@ public class EmployeeCacheModel implements CacheModel<Employee>, Externalizable 
     @Override
     public void readExternal(ObjectInput objectInput) throws IOException {
         employeeId = objectInput.readLong();
+        groupId = objectInput.readLong();
         employeeName = objectInput.readUTF();
         houseName = objectInput.readUTF();
         street = objectInput.readUTF();
@@ -174,6 +179,7 @@ public class EmployeeCacheModel implements CacheModel<Employee>, Externalizable 
     public void writeExternal(ObjectOutput objectOutput)
         throws IOException {
         objectOutput.writeLong(employeeId);
+        objectOutput.writeLong(groupId);
 
         if (employeeName == null) {
             objectOutput.writeUTF(StringPool.BLANK);

@@ -47,6 +47,8 @@ public class EmployeeLocalServiceClpInvoker {
     private String[] _methodParameterTypes33;
     private String _methodName38;
     private String[] _methodParameterTypes38;
+    private String _methodName39;
+    private String[] _methodParameterTypes39;
 
     public EmployeeLocalServiceClpInvoker() {
         _methodName0 = "addEmployee";
@@ -143,6 +145,14 @@ public class EmployeeLocalServiceClpInvoker {
 
         _methodParameterTypes38 = new String[] {
                 "long", "com.liferay.portal.theme.ThemeDisplay"
+            };
+
+        _methodName39 = "addEmployee";
+
+        _methodParameterTypes39 = new String[] {
+                "net.opentrends.training.service.model.Employee",
+                "com.liferay.portal.model.User",
+                "com.liferay.portal.service.ServiceContext"
             };
     }
 
@@ -251,6 +261,13 @@ public class EmployeeLocalServiceClpInvoker {
                 Arrays.deepEquals(_methodParameterTypes38, parameterTypes)) {
             return EmployeeLocalServiceUtil.getPreviewtImageUrl(((Long) arguments[0]).longValue(),
                 (com.liferay.portal.theme.ThemeDisplay) arguments[1]);
+        }
+
+        if (_methodName39.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes39, parameterTypes)) {
+            return EmployeeLocalServiceUtil.addEmployee((net.opentrends.training.service.model.Employee) arguments[0],
+                (com.liferay.portal.model.User) arguments[1],
+                (com.liferay.portal.service.ServiceContext) arguments[2]);
         }
 
         throw new UnsupportedOperationException();

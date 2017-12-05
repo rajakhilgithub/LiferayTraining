@@ -45,6 +45,7 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     public static final String TABLE_NAME = "emp_Employee";
     public static final Object[][] TABLE_COLUMNS = {
             { "employeeId", Types.BIGINT },
+            { "groupId", Types.BIGINT },
             { "employeeName", Types.VARCHAR },
             { "houseName", Types.VARCHAR },
             { "street", Types.VARCHAR },
@@ -59,7 +60,7 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
             { "adharno", Types.VARCHAR },
             { "fileEntryId", Types.BIGINT }
         };
-    public static final String TABLE_SQL_CREATE = "create table emp_Employee (employeeId LONG not null primary key,employeeName VARCHAR(75) null,houseName VARCHAR(75) null,street VARCHAR(75) null,city VARCHAR(75) null,district VARCHAR(75) null,pincode VARCHAR(75) null,phone VARCHAR(75) null,department VARCHAR(75) null,designation VARCHAR(75) null,salary LONG,email VARCHAR(75) null,adharno VARCHAR(75) null,fileEntryId LONG)";
+    public static final String TABLE_SQL_CREATE = "create table emp_Employee (employeeId LONG not null primary key,groupId LONG,employeeName VARCHAR(75) null,houseName VARCHAR(75) null,street VARCHAR(75) null,city VARCHAR(75) null,district VARCHAR(75) null,pincode VARCHAR(75) null,phone VARCHAR(75) null,department VARCHAR(75) null,designation VARCHAR(75) null,salary LONG,email VARCHAR(75) null,adharno VARCHAR(75) null,fileEntryId LONG)";
     public static final String TABLE_SQL_DROP = "drop table emp_Employee";
     public static final String ORDER_BY_JPQL = " ORDER BY employee.employeeId ASC";
     public static final String ORDER_BY_SQL = " ORDER BY emp_Employee.employeeId ASC";
@@ -86,6 +87,7 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
     private long _employeeId;
     private long _originalEmployeeId;
     private boolean _setOriginalEmployeeId;
+    private long _groupId;
     private String _employeeName;
     private String _originalEmployeeName;
     private String _houseName;
@@ -141,6 +143,7 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
         Map<String, Object> attributes = new HashMap<String, Object>();
 
         attributes.put("employeeId", getEmployeeId());
+        attributes.put("groupId", getGroupId());
         attributes.put("employeeName", getEmployeeName());
         attributes.put("houseName", getHouseName());
         attributes.put("street", getStreet());
@@ -164,6 +167,12 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 
         if (employeeId != null) {
             setEmployeeId(employeeId);
+        }
+
+        Long groupId = (Long) attributes.get("groupId");
+
+        if (groupId != null) {
+            setGroupId(groupId);
         }
 
         String employeeName = (String) attributes.get("employeeName");
@@ -265,6 +274,16 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 
     public long getOriginalEmployeeId() {
         return _originalEmployeeId;
+    }
+
+    @Override
+    public long getGroupId() {
+        return _groupId;
+    }
+
+    @Override
+    public void setGroupId(long groupId) {
+        _groupId = groupId;
     }
 
     @Override
@@ -483,6 +502,7 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
         EmployeeImpl employeeImpl = new EmployeeImpl();
 
         employeeImpl.setEmployeeId(getEmployeeId());
+        employeeImpl.setGroupId(getGroupId());
         employeeImpl.setEmployeeName(getEmployeeName());
         employeeImpl.setHouseName(getHouseName());
         employeeImpl.setStreet(getStreet());
@@ -559,6 +579,8 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
         EmployeeCacheModel employeeCacheModel = new EmployeeCacheModel();
 
         employeeCacheModel.employeeId = getEmployeeId();
+
+        employeeCacheModel.groupId = getGroupId();
 
         employeeCacheModel.employeeName = getEmployeeName();
 
@@ -657,10 +679,12 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 
     @Override
     public String toString() {
-        StringBundler sb = new StringBundler(29);
+        StringBundler sb = new StringBundler(31);
 
         sb.append("{employeeId=");
         sb.append(getEmployeeId());
+        sb.append(", groupId=");
+        sb.append(getGroupId());
         sb.append(", employeeName=");
         sb.append(getEmployeeName());
         sb.append(", houseName=");
@@ -694,7 +718,7 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
 
     @Override
     public String toXmlString() {
-        StringBundler sb = new StringBundler(46);
+        StringBundler sb = new StringBundler(49);
 
         sb.append("<model><model-name>");
         sb.append("net.opentrends.training.service.model.Employee");
@@ -703,6 +727,10 @@ public class EmployeeModelImpl extends BaseModelImpl<Employee>
         sb.append(
             "<column><column-name>employeeId</column-name><column-value><![CDATA[");
         sb.append(getEmployeeId());
+        sb.append("]]></column-value></column>");
+        sb.append(
+            "<column><column-name>groupId</column-name><column-value><![CDATA[");
+        sb.append(getGroupId());
         sb.append("]]></column-value></column>");
         sb.append(
             "<column><column-name>employeeName</column-name><column-value><![CDATA[");

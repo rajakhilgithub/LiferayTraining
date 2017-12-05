@@ -861,6 +861,7 @@ public class EmployeePersistenceImpl extends BasePersistenceImpl<Employee>
         employeeImpl.setPrimaryKey(employee.getPrimaryKey());
 
         employeeImpl.setEmployeeId(employee.getEmployeeId());
+        employeeImpl.setGroupId(employee.getGroupId());
         employeeImpl.setEmployeeName(employee.getEmployeeName());
         employeeImpl.setHouseName(employee.getHouseName());
         employeeImpl.setStreet(employee.getStreet());

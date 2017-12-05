@@ -7,7 +7,7 @@
 <%@taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme"%>
 <%@taglib uri="http://liferay.com/tld/util" prefix="liferay-util"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib uri="http://liferay.com/tld/theme" prefix="theme" %>
 <%@page
 	import="net.opentrends.training.service.service.EmployeeLocalServiceUtil"%>
 <%@page import="net.opentrends.training.service.model.Employee"%>
@@ -23,5 +23,8 @@
 	import="com.liferay.portlet.documentlibrary.service.DLAppLocalServiceUtil"%>
 <%@page import="com.liferay.portal.kernel.repository.model.FileEntry"%>
 <%@page import="com.liferay.portal.theme.ThemeDisplay"%>
+<%@page import="com.liferay.portal.security.permission.PermissionChecker"%>
+<%@page import="net.opentrends.training.service.permissions.EmployeePermissions"%>
 
 <portlet:defineObjects />
+<theme:defineObjects />

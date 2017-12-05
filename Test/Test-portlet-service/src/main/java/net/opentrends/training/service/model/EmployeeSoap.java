@@ -13,6 +13,7 @@ import java.util.List;
  */
 public class EmployeeSoap implements Serializable {
     private long _employeeId;
+    private long _groupId;
     private String _employeeName;
     private String _houseName;
     private String _street;
@@ -34,6 +35,7 @@ public class EmployeeSoap implements Serializable {
         EmployeeSoap soapModel = new EmployeeSoap();
 
         soapModel.setEmployeeId(model.getEmployeeId());
+        soapModel.setGroupId(model.getGroupId());
         soapModel.setEmployeeName(model.getEmployeeName());
         soapModel.setHouseName(model.getHouseName());
         soapModel.setStreet(model.getStreet());
@@ -101,6 +103,14 @@ public class EmployeeSoap implements Serializable {
 
     public void setEmployeeId(long employeeId) {
         _employeeId = employeeId;
+    }
+
+    public long getGroupId() {
+        return _groupId;
+    }
+
+    public void setGroupId(long groupId) {
+        _groupId = groupId;
     }
 
     public String getEmployeeName() {

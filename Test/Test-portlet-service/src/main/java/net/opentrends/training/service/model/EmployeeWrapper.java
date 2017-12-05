@@ -37,6 +37,7 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
         Map<String, Object> attributes = new HashMap<String, Object>();
 
         attributes.put("employeeId", getEmployeeId());
+        attributes.put("groupId", getGroupId());
         attributes.put("employeeName", getEmployeeName());
         attributes.put("houseName", getHouseName());
         attributes.put("street", getStreet());
@@ -60,6 +61,12 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
 
         if (employeeId != null) {
             setEmployeeId(employeeId);
+        }
+
+        Long groupId = (Long) attributes.get("groupId");
+
+        if (groupId != null) {
+            setGroupId(groupId);
         }
 
         String employeeName = (String) attributes.get("employeeName");
@@ -179,6 +186,26 @@ public class EmployeeWrapper implements Employee, ModelWrapper<Employee> {
     @Override
     public void setEmployeeId(long employeeId) {
         _employee.setEmployeeId(employeeId);
+    }
+
+    /**
+    * Returns the group ID of this employee.
+    *
+    * @return the group ID of this employee
+    */
+    @Override
+    public long getGroupId() {
+        return _employee.getGroupId();
+    }
+
+    /**
+    * Sets the group ID of this employee.
+    *
+    * @param groupId the group ID of this employee
+    */
+    @Override
+    public void setGroupId(long groupId) {
+        _employee.setGroupId(groupId);
     }
 
     /**

@@ -270,6 +270,15 @@ public class EmployeeLocalServiceUtil {
         return getService().getPreviewtImageUrl(fileEntryId, themeDisplay);
     }
 
+    public static net.opentrends.training.service.model.Employee addEmployee(
+        net.opentrends.training.service.model.Employee employee,
+        com.liferay.portal.model.User user,
+        com.liferay.portal.service.ServiceContext serviceContext)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return getService().addEmployee(employee, user, serviceContext);
+    }
+
     public static void clearService() {
         _service = null;
     }

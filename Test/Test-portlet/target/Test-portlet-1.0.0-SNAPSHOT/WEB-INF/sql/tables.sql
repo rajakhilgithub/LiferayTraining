@@ -1,5 +1,6 @@
 create table emp_Employee (
 	employeeId LONG not null primary key,
+	groupId LONG,
 	employeeName VARCHAR(75) null,
 	houseName VARCHAR(75) null,
 	street VARCHAR(75) null,

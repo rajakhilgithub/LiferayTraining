@@ -8,6 +8,7 @@
 		<id name="employeeId" type="long">
 			<generator class="assigned" />
 		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="employeeName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="houseName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="street" type="com.liferay.portal.dao.orm.hibernate.StringType" />

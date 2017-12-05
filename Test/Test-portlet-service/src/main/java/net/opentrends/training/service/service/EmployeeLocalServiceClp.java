@@ -46,6 +46,8 @@ public class EmployeeLocalServiceClp implements EmployeeLocalService {
     private String[] _methodParameterTypes17;
     private String _methodName19;
     private String[] _methodParameterTypes19;
+    private String _methodName20;
+    private String[] _methodParameterTypes20;
 
     public EmployeeLocalServiceClp(InvokableLocalService invokableLocalService) {
         _invokableLocalService = invokableLocalService;
@@ -144,6 +146,14 @@ public class EmployeeLocalServiceClp implements EmployeeLocalService {
 
         _methodParameterTypes19 = new String[] {
                 "long", "com.liferay.portal.theme.ThemeDisplay"
+            };
+
+        _methodName20 = "addEmployee";
+
+        _methodParameterTypes20 = new String[] {
+                "net.opentrends.training.service.model.Employee",
+                "com.liferay.portal.model.User",
+                "com.liferay.portal.service.ServiceContext"
             };
     }
 
@@ -696,5 +706,46 @@ public class EmployeeLocalServiceClp implements EmployeeLocalService {
         }
 
         return (java.lang.String) ClpSerializer.translateOutput(returnObj);
+    }
+
+    @Override
+    public net.opentrends.training.service.model.Employee addEmployee(
+        net.opentrends.training.service.model.Employee employee,
+        com.liferay.portal.model.User user,
+        com.liferay.portal.service.ServiceContext serviceContext)
+        throws com.liferay.portal.kernel.exception.PortalException,
+            com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName20,
+                    _methodParameterTypes20,
+                    new Object[] {
+                        ClpSerializer.translateInput(employee),
+                        
+                    ClpSerializer.translateInput(user),
+                        
+                    ClpSerializer.translateInput(serviceContext)
+                    });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+                throw (com.liferay.portal.kernel.exception.PortalException) t;
+            }
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (net.opentrends.training.service.model.Employee) ClpSerializer.translateOutput(returnObj);
     }
 }
