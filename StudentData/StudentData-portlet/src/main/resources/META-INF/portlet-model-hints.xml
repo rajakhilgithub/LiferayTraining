@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="net.opentrends.studentdata.model.StudentDetails">
+		<field name="studentId" type="long" />
+		<field name="studentName" type="String" />
+		<field name="department" type="String" />
+		<field name="semester" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+	<model name="net.opentrends.studentdata.model.StudentMarks">
+		<field name="markId" type="long" />
+		<field name="studentId" type="long" />
+		<field name="mark1" type="long" />
+		<field name="mark2" type="long" />
+		<field name="mark3" type="long" />
+		<field name="mark4" type="long" />
+		<field name="mark5" type="long" />
+		<field name="total" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+</model-hints>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="net.opentrends.studentdata.model.impl.StudentDetailsModelImpl">
+		<attributes>
+			<id name="studentId" />
+			<basic name="studentName" />
+			<basic name="department" />
+			<basic name="semester" />
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="net.opentrends.studentdata.model.impl.StudentMarksModelImpl">
+		<attributes>
+			<id name="markId" />
+			<basic name="studentId" />
+			<basic name="mark1" />
+			<basic name="mark2" />
+			<basic name="mark3" />
+			<basic name="mark4" />
+			<basic name="mark5" />
+			<basic name="total" />
+			<basic name="groupId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="net.opentrends.studentdata.model.impl.StudentDetailsImpl" name="StudentDetails">
+		<table name="StudentData_StudentDetails" />
+		<attributes />
+	</entity>
+	<entity class="net.opentrends.studentdata.model.impl.StudentMarksImpl" name="StudentMarks">
+		<table name="StudentData_StudentMarks" />
+		<attributes />
+	</entity>
+</entity-mappings>

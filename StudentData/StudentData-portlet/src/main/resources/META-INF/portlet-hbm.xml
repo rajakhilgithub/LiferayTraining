@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="net.opentrends.studentdata.model.StudentDetails" />
+	<import class="net.opentrends.studentdata.model.StudentMarks" />
+	<class name="net.opentrends.studentdata.model.impl.StudentDetailsImpl" table="StudentData_StudentDetails">
+		<cache usage="read-write" />
+		<id name="studentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="studentName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="department" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="semester" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="net.opentrends.studentdata.model.impl.StudentMarksImpl" table="StudentData_StudentMarks">
+		<cache usage="read-write" />
+		<id name="markId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="studentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="mark1" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="mark2" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="mark3" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="mark4" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="mark5" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="total" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

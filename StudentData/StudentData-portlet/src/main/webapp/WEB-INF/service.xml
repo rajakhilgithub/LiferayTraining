@@ -1,0 +1,30 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="net.opentrends.studentdata">
+	<namespace>StudentData</namespace>
+	<entity name="StudentDetails" local-service="true"
+		remote-service="false">
+		<column name="studentId" type="long" primary="true" />
+		<column name="studentName" type="String" />
+		<column name="department" type="String" />
+		<column name="semester" type="long" />
+		<column name="groupId" type="long" />
+		<finder return-type="StudentDetails" name="StudentId">
+			<finder-column name="studentId" />
+		</finder>
+	</entity>
+	<entity name="StudentMarks" local-service="true" remote-service="false">
+		<column name="markId" type="long" primary="true" />
+		<column name="studentId" type="long" />
+		<column name="mark1" type="long" />
+		<column name="mark2" type="long" />
+		<column name="mark3" type="long" />
+		<column name="mark4" type="long" />
+		<column name="mark5" type="long" />
+		<column name="total" type="long" />
+		<column name="groupId" type="long"/>
+		<finder return-type="StudentMarks" name="StudentId">
+			<finder-column name="studentId" />
+		</finder>
+	</entity>
+</service-builder>
