@@ -1,0 +1,1 @@
+create index IX_8BCC26F on candidate_Registration (groupId);

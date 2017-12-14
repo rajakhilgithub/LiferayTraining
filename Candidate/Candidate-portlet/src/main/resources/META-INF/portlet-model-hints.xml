@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="net.opentrends.candidate.model.Registration">
+		<field name="id" type="long" />
+		<field name="name" type="String" />
+		<field name="email" type="String" />
+		<field name="city" type="String" />
+		<field name="mobileNo" type="String" />
+		<field name="photoFileEntryId" type="long" />
+		<field name="resumeFileEntryId" type="long" />
+		<field name="userId" type="long" />
+		<field name="groupId" type="long" />
+	</model>
+</model-hints>

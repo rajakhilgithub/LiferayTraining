@@ -1,0 +1,20 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="net.opentrends.candidate">
+	<namespace>candidate</namespace>
+	<entity name="Registration" local-service="true" remote-service="false">
+		<column name="id" type="long" primary="true" />
+		<column name="name" type="String" />
+		<column name="email" type="String" />
+		<column name="city" type="String" />
+		<column name="mobileNo" type="String" />
+		<column name="photoFileEntryId" type="long" />
+		<column name="resumeFileEntryId" type="long" />
+		<column name="userId" type="long" />
+		<column name="groupId" type="long" />
+
+		<finder name="groupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+	</entity>
+</service-builder>
